@@ -1,4 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import A from "./App";
 
-ReactDOM.render(<h1>Hello this is my world</h1>, document.getElementById("root")); 
+ReactDOM.render(<><A name = "Sarang" age = "12"/><A name = "Kunal" age = "15"/><A name = "Neel" age = "14"/></>, document.getElementById("root")); 
