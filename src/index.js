@@ -1,5 +1,5 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import A from "./App2";
+import F from "./Forms";
 
-ReactDOM.render(<A />, document.getElementById("root"))
+ReactDOM.render(<F />, document.getElementById("root"))
