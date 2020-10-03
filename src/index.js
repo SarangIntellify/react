@@ -1,5 +1,5 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import F from "./Forms";
+import T from "./Todo"
 
-ReactDOM.render(<F />, document.getElementById("root"))
+ReactDOM.render(<T />, document.getElementById("root"))

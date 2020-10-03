@@ -3,7 +3,10 @@ import "./index.css"
 
 const Forms = () => {
 
-    // here fullName is an object having two attributes "fname and lname"
+    //here fullName is an object having two attributes "fname and lname"
+    //useState returns and array in general
+    //first is a varaible which is undefined other is function.
+    //here we are destructuring
     const [fullName, setInputs] = useState(
         {
             fname: "",
@@ -14,41 +17,51 @@ const Forms = () => {
     );
 
     const inputEvent = (event) => {
+
+        // this is objecyt destructuring.
         const { value, name } = event.target;
+
         // updating the values using setInputs 
         setInputs((preVal) => {
-            if (name === 'fname') {
-                return {
-                    fname: value,
-                    lname: preVal.lname,
-                    email: preVal.email,
-                    phone: preVal.phone
-                };
-            }
-            else if (name === "lname") {
-                return {
-                    fname: preVal.fname,
-                    lname: value,
-                    email: preVal.email,
-                    phone: preVal.phone
-                };
-            }
-            else if (name === "email") {
-                return {
-                    fname: preVal.fname,
-                    lname: preVal.lname,
-                    email: value,
-                    phone: preVal.phone
-                };
-            }
-            else if (name === 'phone') {
-                return {
-                    fname: preVal.fname,
-                    lname: preVal.lname,
-                    email: preVal.email,
-                    phone: value,
-                };
-            }
+            // name = fname or lname or email or phone
+            //[name] is equivalent to preVal[name] = value; updating the value of properties.
+            return {
+                ...preVal,
+                [name]: value
+            };
+
+            // if (name === "fname") {
+            //     return {
+            //         fname: value,
+            //         lname: preVal.lname,
+            //         email: preVal.email,
+            //         phone: preVal.phone
+            //     };
+            // }
+            // else if (name === "lname") {
+            //     return {
+            //         fname: preVal.fname,
+            //         lname: value,
+            //         email: preVal.email,
+            //         phone: preVal.phone
+            //     };
+            // }
+            // else if (name === "email") {
+            //     return {
+            //         fname: preVal.fname,
+            //         lname: preVal.lname,
+            //         email: value,
+            //         phone: preVal.phone
+            //     };
+            // }
+            // else if (name === "phone") {
+            //     return {
+            //         fname: preVal.fname,
+            //         lname: preVal.lname,
+            //         email: preVal.email,
+            //         phone: value,
+            //     };
+            // }
         })
     };
     // preventDefault prevents the default behaviour of form tag
